@@ -9,10 +9,12 @@ import UIKit
 
 final class FirstItemView: UIView {
   
-  // MARK: - Public Properties
-  let itemImage = UIImageView()
+  // MARK: -Public Properties
+  var complition: ((ProductModel?) -> Void)?
 
-  // MARK: - Private Properties
+  // MARK: -Private Properties
+  private let itemImage = UIImageView()
+  
   private let itemDescriptionLabel: UILabel = {
     let label = UILabel()
     label.font = .boldSystemFont(ofSize: 15)
@@ -23,17 +25,17 @@ final class FirstItemView: UIView {
     return label
   }()
   
-  // MARK: - IBAction
+  // MARK: -IBAction
   @objc private func imageTapped() {
-    complition?(itemImage.image!, itemDescriptionLabel.text!)
+    guard let image = itemImage.image, let discription = itemDescriptionLabel.text else { return }
+    let productModel = ProductModel(description: discription, image: image)
+    complition?(productModel)
   }
   
-  // MARK: - Public methods
-  var complition: ((UIImage, String) -> Void)?
-  
+  // MARK: -Public methods
   func setInfo() {
-    self.backgroundColor = .quaternaryLabel
-    self.layer.cornerRadius = 10
+    backgroundColor = .quaternaryLabel
+    layer.cornerRadius = 10
     itemImage.image = UIImage(named: "macBook")
     itemDescriptionLabel.text = "16-inch MacBook Pro Apple M1 Pro Chip with 10-Core"
     
@@ -46,9 +48,8 @@ final class FirstItemView: UIView {
                                         width: 130,
                                         height: 50)
     
-    
-    self.addSubview(itemImage)
-    self.addSubview(itemDescriptionLabel)
+    addSubview(itemImage)
+    addSubview(itemDescriptionLabel)
     
     let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
     itemImage.isUserInteractionEnabled = true

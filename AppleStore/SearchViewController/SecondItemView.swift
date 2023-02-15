@@ -9,7 +9,10 @@ import UIKit
 
 final class SecondItemView: UIView {
   
-  // MARK: - Private Properties
+  // MARK: -Public Properties
+  var complition: ((ProductModel?) -> Void)?
+  
+  // MARK: -Private Properties
   private let itemImage = UIImageView()
   
   private let itemDescriptionLabel: UILabel = {
@@ -22,17 +25,17 @@ final class SecondItemView: UIView {
     return label
   }()
   
-  // MARK: IBActions
+  // MARK: -IBActions
   @objc private func imageTapped() {
-    complition?(itemImage.image!, itemDescriptionLabel.text!)
+    guard let image = itemImage.image, let discription = itemDescriptionLabel.text else { return }
+    let productModel = ProductModel(description: discription, image: image)
+    complition?(productModel)
   }
   
-  // MARK: - Public methods
-  var complition: ((UIImage, String) -> Void)?
-  
+  // MARK: -Public methods
   func setInfo() {
-    self.backgroundColor = .quaternaryLabel
-    self.layer.cornerRadius = 10
+    backgroundColor = .quaternaryLabel
+    layer.cornerRadius = 10
     itemImage.image = UIImage(named: "airPods")
     itemDescriptionLabel.text = "AirPods Pro (2nd generation)"
     
@@ -49,7 +52,7 @@ final class SecondItemView: UIView {
     itemImage.isUserInteractionEnabled = true
     itemImage.addGestureRecognizer(tapGestureRecognizer)
     
-    self.addSubview(itemImage)
-    self.addSubview(itemDescriptionLabel)
+    addSubview(itemImage)
+    addSubview(itemDescriptionLabel)
   }
 }

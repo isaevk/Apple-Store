@@ -8,15 +8,15 @@
 import UIKit
 
 final class SearchViewController: UIViewController {
-
-  // MARK: - Private Properties
+  
+  // MARK: -Private Properties
   private let firstRecentlyView =  FirstItemView()
   private let secondRecentlyView = SecondItemView()
   private let searchLabel = UILabel()
   private let searchTextField = UITextField()
   private let recentItemsLabel = UILabel()
   private let clearButton = UIButton()
-
+  
   private lazy var recentlyItemsScrollView: UIScrollView = {
     let scrollView = UIScrollView()
     scrollView.backgroundColor = .black
@@ -44,6 +44,7 @@ final class SearchViewController: UIViewController {
     CGSize(width: view.frame.width + 400, height: 150)
   }
   
+  // MARK: -Override methods
   override func viewDidLoad() {
     super.viewDidLoad()
     setUI()
@@ -51,7 +52,7 @@ final class SearchViewController: UIViewController {
     sentInfoToAboutVC()
   }
   
-  // MARK: - Constraints
+  // MARK: -Constraints
   private func setConstraints() {
     [searchLabel, searchTextField, recentItemsLabel, clearButton].forEach {
       view.addSubview($0)
@@ -89,7 +90,7 @@ final class SearchViewController: UIViewController {
     }
   }
   
-  // MARK: - Setup UI
+  // MARK: -Setup UI
   private func setUI() {
     firstRecentlyView.setInfo()
     secondRecentlyView.setInfo()
@@ -114,23 +115,21 @@ final class SearchViewController: UIViewController {
     contentView.addSubview(stackView)
   }
   
-  // MARK: - Switch to AboutVC
+  // MARK: -Switch to AboutVC
   private func sentInfoToAboutVC() {
     let aboutVC = AboutProductViewController()
     let markBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .done, target: nil, action: nil)
     let shareBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .done, target: nil, action: nil)
     aboutVC.navigationItem.rightBarButtonItems =  [markBarButtonItem, shareBarButtonItem]
     
-    firstRecentlyView.complition = { image, discription in
-      aboutVC.itemImage.image = image
-      aboutVC.itemDescriptionLabel.text = discription
-      self.navigationController?.pushViewController(aboutVC, animated: true)
+    firstRecentlyView.complition = { [weak self] model  in
+      aboutVC.productModel = model
+      self?.navigationController?.pushViewController(aboutVC, animated: true)
     }
     
-    secondRecentlyView.complition = { image, discription in
-      aboutVC.itemImage.image = image
-      aboutVC.itemDescriptionLabel.text = discription
-      self.navigationController?.pushViewController(aboutVC, animated: true)
+    secondRecentlyView.complition = { [weak self] model in
+      aboutVC.productModel = model
+      self?.navigationController?.pushViewController(aboutVC, animated: true)
     }
   }
 }
