@@ -8,13 +8,6 @@
 import UIKit
 
 final class ForYouViewController: UIViewController {
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-  }
-  
-  override var preferredStatusBarStyle: UIStatusBarStyle {
-    .lightContent
-  }
+
+  override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 }

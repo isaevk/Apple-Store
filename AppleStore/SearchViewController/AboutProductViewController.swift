@@ -9,19 +9,24 @@ import UIKit
 
 final class AboutProductViewController: UIViewController {
   
-  // MARK: - Public Properties
+  // MARK: -Public Properties
+  var productModel: ProductModel?
+  
+  // MARK: - Private Properties
   let itemImage = UIImageView()
   let itemDescriptionLabel = UILabel()
   
+  // MARK: -Override Methods
   override func viewDidLoad() {
     super.viewDidLoad()
     setConstraints()
     setUI()
   }
   
+  // MARK: -Override Properties
   override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
   
-  // MARK: - Constraints
+  // MARK: -Constraints
   private func setConstraints() {
     [itemImage, itemDescriptionLabel].forEach {
       view.addSubview($0)
@@ -39,9 +44,11 @@ final class AboutProductViewController: UIViewController {
     ])
   }
   
-  // MARK: - Setup UI
+  // MARK: -Setup UI
   private func setUI() {
     view.backgroundColor = .opaqueSeparator
     itemDescriptionLabel.font = .boldSystemFont(ofSize: 30)
+    itemImage.image = productModel?.image
+    itemDescriptionLabel.text = productModel?.description
   }
 }

@@ -20,6 +20,8 @@
 		182FB4C02992858A007171F7 /* FirstItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4BF2992858A007171F7 /* FirstItemView.swift */; };
 		182FB4C2299285A8007171F7 /* SecondItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4C1299285A8007171F7 /* SecondItemView.swift */; };
 		182FB4C429928B7A007171F7 /* AboutProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4C329928B7A007171F7 /* AboutProductViewController.swift */; };
+		182FB4CD299CBD11007171F7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4CC299CBD11007171F7 /* MainTabBarController.swift */; };
+		182FB4CF299CBDA2007171F7 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4CE299CBDA2007171F7 /* ProductModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		182FB4BF2992858A007171F7 /* FirstItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstItemView.swift; sourceTree = "<group>"; };
 		182FB4C1299285A8007171F7 /* SecondItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondItemView.swift; sourceTree = "<group>"; };
 		182FB4C329928B7A007171F7 /* AboutProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProductViewController.swift; sourceTree = "<group>"; };
+		182FB4CC299CBD11007171F7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		182FB4CE299CBDA2007171F7 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +76,14 @@
 			children = (
 				182FB4982990E6E5007171F7 /* AppDelegate.swift */,
 				182FB49A2990E6E5007171F7 /* SceneDelegate.swift */,
+				182FB4CB299CBCC8007171F7 /* MainTabBarController */,
 				182FB4AC29910F53007171F7 /* ShopViewController */,
 				182FB4AF29910F76007171F7 /* ForYouViewController */,
 				182FB4B229910F9F007171F7 /* SearchViewController */,
 				182FB4B629910FD7007171F7 /* BagViewController */,
-				182FB4B929910FFC007171F7 /* Resources */,
 				182FB4BA2991113C007171F7 /* Helper */,
+				182FB4D0299CBDAB007171F7 /* Model */,
+				182FB4B929910FFC007171F7 /* Resources */,
 			);
 			path = AppleStore;
 			sourceTree = "<group>";
@@ -134,6 +140,22 @@
 				182FB4BD29927904007171F7 /* UITextField+.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		182FB4CB299CBCC8007171F7 /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				182FB4CC299CBD11007171F7 /* MainTabBarController.swift */,
+			);
+			path = MainTabBarController;
+			sourceTree = "<group>";
+		};
+		182FB4D0299CBDAB007171F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				182FB4CE299CBDA2007171F7 /* ProductModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +230,7 @@
 			files = (
 				182FB4B829910FEB007171F7 /* BagViewController.swift in Sources */,
 				182FB4B429910FBF007171F7 /* SearchViewController.swift in Sources */,
+				182FB4CD299CBD11007171F7 /* MainTabBarController.swift in Sources */,
 				182FB4AE29910F6E007171F7 /* ShopViewController.swift in Sources */,
 				182FB4C2299285A8007171F7 /* SecondItemView.swift in Sources */,
 				182FB4992990E6E5007171F7 /* AppDelegate.swift in Sources */,
@@ -215,6 +238,7 @@
 				182FB4C429928B7A007171F7 /* AboutProductViewController.swift in Sources */,
 				182FB4B129910F93007171F7 /* ForYouViewController.swift in Sources */,
 				182FB49B2990E6E5007171F7 /* SceneDelegate.swift in Sources */,
+				182FB4CF299CBDA2007171F7 /* ProductModel.swift in Sources */,
 				182FB4BC2991115D007171F7 /* Builder.swift in Sources */,
 				182FB4BE29927904007171F7 /* UITextField+.swift in Sources */,
 			);
