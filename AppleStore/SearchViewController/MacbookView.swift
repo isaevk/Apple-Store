@@ -1,5 +1,5 @@
 //
-//  SecondItemView.swift
+//  MacbookItemView.swift
 //  AppleStore
 //
 //  Created by Kirill Dev on 07.02.2023.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-final class SecondItemView: UIView {
+final class MacbookItemView: UIView {
   
-  // MARK: -Public Properties
-  var complition: ((ProductModel?) -> Void)?
+  // MARK: - Public Properties
+  var complition: ((String) -> Void)?
   
-  // MARK: -Private Properties
+  // MARK: - Private Properties
   private let itemImage = UIImageView()
   
   private let itemDescriptionLabel: UILabel = {
@@ -25,19 +25,27 @@ final class SecondItemView: UIView {
     return label
   }()
   
-  // MARK: -IBActions
+  // MARK: - IBAction
   @objc private func imageTapped() {
-    guard let image = itemImage.image, let discription = itemDescriptionLabel.text else { return }
-    let productModel = ProductModel(description: discription, image: image)
-    complition?(productModel)
+    complition?(ProductModel.mac)
   }
   
-  // MARK: -Public methods
-  func setInfo() {
+  // MARK: - Override init
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    self.setInfo()
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  // MARK: - Private methods
+  private func setInfo() {
     backgroundColor = .quaternaryLabel
     layer.cornerRadius = 10
-    itemImage.image = UIImage(named: "airPods")
-    itemDescriptionLabel.text = "AirPods Pro (2nd generation)"
+    itemImage.image = UIImage(named: "macBook")
+    itemDescriptionLabel.text = "16-inch MacBook Pro Apple M1 Pro Chip with 10-Core"
     
     itemImage.frame = CGRect(x: 10,
                              y: 10,
@@ -48,11 +56,11 @@ final class SecondItemView: UIView {
                                         width: 130,
                                         height: 50)
     
+    addSubview(itemImage)
+    addSubview(itemDescriptionLabel)
+    
     let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
     itemImage.isUserInteractionEnabled = true
     itemImage.addGestureRecognizer(tapGestureRecognizer)
-    
-    addSubview(itemImage)
-    addSubview(itemDescriptionLabel)
   }
 }
