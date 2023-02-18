@@ -14,6 +14,7 @@ final class MainTabBarController: UITabBarController {
     super.viewDidLoad()
     setupUI()
   }
+  override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
   
   // MARK: - Private Methods
   private func setupUI() {

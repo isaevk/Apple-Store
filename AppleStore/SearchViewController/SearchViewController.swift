@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import WebKit
 
 final class SearchViewController: UIViewController {
   
-  // MARK: -Private Properties
-  private let firstRecentlyView =  FirstItemView()
-  private let secondRecentlyView = SecondItemView()
+  // MARK: - Private Properties
+  private let macBookView =  MacbookItemView()
+  private let airPodsView = AirPodsItemView()
   private let searchLabel = UILabel()
   private let searchTextField = UITextField()
   private let recentItemsLabel = UILabel()
@@ -44,7 +45,7 @@ final class SearchViewController: UIViewController {
     CGSize(width: view.frame.width + 400, height: 150)
   }
   
-  // MARK: -Override methods
+  // MARK: - Override methods
   override func viewDidLoad() {
     super.viewDidLoad()
     setUI()
@@ -52,12 +53,13 @@ final class SearchViewController: UIViewController {
     sentInfoToAboutVC()
   }
   
-  // MARK: -Constraints
+  // MARK: - Constraints
   private func setConstraints() {
     [searchLabel, searchTextField, recentItemsLabel, clearButton].forEach {
       view.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
+    stackView.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
       searchLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
@@ -69,18 +71,13 @@ final class SearchViewController: UIViewController {
       recentItemsLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
       clearButton.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 35),
       clearButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-    ])
-    
-    // Add views on StackView
-    [firstRecentlyView, secondRecentlyView].forEach { stackView.addArrangedSubview($0) }
-    
-    stackView.translatesAutoresizingMaskIntoConstraints = false
-    
-    NSLayoutConstraint.activate([
       stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
       stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
       stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor)
     ])
+    
+    // Add views on StackView
+    [macBookView, airPodsView].forEach { stackView.addArrangedSubview($0) }
     
     for view in stackView.arrangedSubviews {
       NSLayoutConstraint.activate([
@@ -90,10 +87,8 @@ final class SearchViewController: UIViewController {
     }
   }
   
-  // MARK: -Setup UI
+  // MARK: - Setup UI
   private func setUI() {
-    firstRecentlyView.setInfo()
-    secondRecentlyView.setInfo()
     searchLabel.text = "Search"
     searchLabel.font = .boldSystemFont(ofSize: 40)
     searchLabel.textColor = .white
@@ -115,20 +110,17 @@ final class SearchViewController: UIViewController {
     contentView.addSubview(stackView)
   }
   
-  // MARK: -Switch to AboutVC
+  // MARK: - Switch to AboutVC
   private func sentInfoToAboutVC() {
     let aboutVC = AboutProductViewController()
-    let markBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .done, target: nil, action: nil)
-    let shareBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .done, target: nil, action: nil)
-    aboutVC.navigationItem.rightBarButtonItems =  [markBarButtonItem, shareBarButtonItem]
     
-    firstRecentlyView.complition = { [weak self] model  in
-      aboutVC.productModel = model
+    macBookView.complition = { [weak self] url  in
+      aboutVC.myURL = url
       self?.navigationController?.pushViewController(aboutVC, animated: true)
     }
     
-    secondRecentlyView.complition = { [weak self] model in
-      aboutVC.productModel = model
+    airPodsView.complition = { [weak self] url in
+      aboutVC.myURL = url
       self?.navigationController?.pushViewController(aboutVC, animated: true)
     }
   }

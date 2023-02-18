@@ -17,11 +17,11 @@
 		182FB4B829910FEB007171F7 /* BagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4B729910FEB007171F7 /* BagViewController.swift */; };
 		182FB4BC2991115D007171F7 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4BB2991115D007171F7 /* Builder.swift */; };
 		182FB4BE29927904007171F7 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4BD29927904007171F7 /* UITextField+.swift */; };
-		182FB4C02992858A007171F7 /* FirstItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4BF2992858A007171F7 /* FirstItemView.swift */; };
-		182FB4C2299285A8007171F7 /* SecondItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4C1299285A8007171F7 /* SecondItemView.swift */; };
+		182FB4C02992858A007171F7 /* MacbookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4BF2992858A007171F7 /* MacbookView.swift */; };
+		182FB4C2299285A8007171F7 /* AirPodsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4C1299285A8007171F7 /* AirPodsItemView.swift */; };
 		182FB4C429928B7A007171F7 /* AboutProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4C329928B7A007171F7 /* AboutProductViewController.swift */; };
 		182FB4CD299CBD11007171F7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4CC299CBD11007171F7 /* MainTabBarController.swift */; };
-		182FB4CF299CBDA2007171F7 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4CE299CBDA2007171F7 /* ProductModel.swift */; };
+		182FB4CF299CBDA2007171F7 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4CE299CBDA2007171F7 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +37,11 @@
 		182FB4B729910FEB007171F7 /* BagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagViewController.swift; sourceTree = "<group>"; };
 		182FB4BB2991115D007171F7 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		182FB4BD29927904007171F7 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
-		182FB4BF2992858A007171F7 /* FirstItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstItemView.swift; sourceTree = "<group>"; };
-		182FB4C1299285A8007171F7 /* SecondItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondItemView.swift; sourceTree = "<group>"; };
+		182FB4BF2992858A007171F7 /* MacbookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacbookView.swift; sourceTree = "<group>"; };
+		182FB4C1299285A8007171F7 /* AirPodsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPodsItemView.swift; sourceTree = "<group>"; };
 		182FB4C329928B7A007171F7 /* AboutProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProductViewController.swift; sourceTree = "<group>"; };
 		182FB4CC299CBD11007171F7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		182FB4CE299CBDA2007171F7 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		182FB4CE299CBDA2007171F7 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,6 @@
 				182FB4B229910F9F007171F7 /* SearchViewController */,
 				182FB4B629910FD7007171F7 /* BagViewController */,
 				182FB4BA2991113C007171F7 /* Helper */,
-				182FB4D0299CBDAB007171F7 /* Model */,
 				182FB4B929910FFC007171F7 /* Resources */,
 			);
 			path = AppleStore;
@@ -109,8 +108,8 @@
 			children = (
 				182FB4B329910FBF007171F7 /* SearchViewController.swift */,
 				182FB4C329928B7A007171F7 /* AboutProductViewController.swift */,
-				182FB4BF2992858A007171F7 /* FirstItemView.swift */,
-				182FB4C1299285A8007171F7 /* SecondItemView.swift */,
+				182FB4BF2992858A007171F7 /* MacbookView.swift */,
+				182FB4C1299285A8007171F7 /* AirPodsItemView.swift */,
 			);
 			path = SearchViewController;
 			sourceTree = "<group>";
@@ -138,6 +137,7 @@
 			children = (
 				182FB4BB2991115D007171F7 /* Builder.swift */,
 				182FB4BD29927904007171F7 /* UITextField+.swift */,
+				182FB4CE299CBDA2007171F7 /* UIView+.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -148,14 +148,6 @@
 				182FB4CC299CBD11007171F7 /* MainTabBarController.swift */,
 			);
 			path = MainTabBarController;
-			sourceTree = "<group>";
-		};
-		182FB4D0299CBDAB007171F7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				182FB4CE299CBDA2007171F7 /* ProductModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,13 +224,13 @@
 				182FB4B429910FBF007171F7 /* SearchViewController.swift in Sources */,
 				182FB4CD299CBD11007171F7 /* MainTabBarController.swift in Sources */,
 				182FB4AE29910F6E007171F7 /* ShopViewController.swift in Sources */,
-				182FB4C2299285A8007171F7 /* SecondItemView.swift in Sources */,
+				182FB4C2299285A8007171F7 /* AirPodsItemView.swift in Sources */,
 				182FB4992990E6E5007171F7 /* AppDelegate.swift in Sources */,
-				182FB4C02992858A007171F7 /* FirstItemView.swift in Sources */,
+				182FB4C02992858A007171F7 /* MacbookView.swift in Sources */,
 				182FB4C429928B7A007171F7 /* AboutProductViewController.swift in Sources */,
 				182FB4B129910F93007171F7 /* ForYouViewController.swift in Sources */,
 				182FB49B2990E6E5007171F7 /* SceneDelegate.swift in Sources */,
-				182FB4CF299CBDA2007171F7 /* ProductModel.swift in Sources */,
+				182FB4CF299CBDA2007171F7 /* UIView+.swift in Sources */,
 				182FB4BC2991115D007171F7 /* Builder.swift in Sources */,
 				182FB4BE29927904007171F7 /* UITextField+.swift in Sources */,
 			);
