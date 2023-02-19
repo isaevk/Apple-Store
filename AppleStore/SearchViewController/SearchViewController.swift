@@ -101,9 +101,10 @@ final class SearchViewController: UIViewController {
     searchTextField.placeholder = "What are you looking for?"
     searchTextField.borderStyle = .roundedRect
     searchTextField.backgroundColor = .lightGray
+    guard let magnifierImage = UIImage(systemName: "magnifyingglass"), let microImage = UIImage(systemName: "mic.fill") else { return }
     searchTextField.addImagesTxtField(txtField: searchTextField,
-                                      leftImage: UIImage(systemName: "magnifyingglass")!,
-                                      rightImage: UIImage(systemName: "mic.fill")!)
+                                      leftImage: magnifierImage,
+                                      rightImage: microImage)
     
     view.addSubview(recentlyItemsScrollView)
     recentlyItemsScrollView.addSubview(contentView)
