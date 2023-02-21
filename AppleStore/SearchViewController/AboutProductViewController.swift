@@ -27,7 +27,7 @@ final class AboutProductViewController: UIViewController {
     setupUI()
   }
   
-  // MARK: -IBAction
+  // MARK: - IBAction
   @objc private func goBackAction() {
     guard webView.canGoBack else { return }
     webView.goBack()

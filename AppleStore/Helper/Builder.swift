@@ -36,4 +36,9 @@ final class BuilderVC {
     bagVC.tabBarItem.image = UIImage(systemName: "bag")
     return bagVC
   }
+  
+  static func makeLounchVC() -> UIViewController {
+    let vc = LounchViewController()
+    return vc
+  }
 }

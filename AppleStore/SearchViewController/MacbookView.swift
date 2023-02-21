@@ -27,7 +27,7 @@ final class MacbookItemView: UIView {
   
   // MARK: - IBAction
   @objc private func imageTapped() {
-    complition?(ProductModel.mac)
+    complition?(URLs.mac)
   }
   
   // MARK: - Override init
@@ -36,6 +36,7 @@ final class MacbookItemView: UIView {
     self.setInfo()
   }
   
+ @available(*, unavailable)
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
