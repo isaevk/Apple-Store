@@ -27,7 +27,7 @@ final class AirPodsItemView: UIView {
   
   // MARK: - IBActions
   @objc private func imageTapped() {
-    complition?(ProductModel.pods)
+    complition?(URLs.pods)
   }
   
   // MARK: - Override init
@@ -36,10 +36,10 @@ final class AirPodsItemView: UIView {
     self.setInfo()
   }
   
+  @available(*, unavailable)
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
   // MARK: - Private methods
   private func setInfo() {
     backgroundColor = .quaternaryLabel
