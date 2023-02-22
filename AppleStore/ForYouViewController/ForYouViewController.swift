@@ -11,10 +11,10 @@ final class ForYouViewController: UIViewController {
   
   // MARK: - Private Properties
   private let titleLabel = UILabel()
-  private let avatarImageView = UIImageView()
+  private var avatarImageView = UIImageView()
   private let topLineView = UIView()
   private let whatsHappeningLabel = UILabel()
-  private var orderButton = UIButton()
+  private let orderButton = UIButton()
   private let orderProgressView = UIProgressView()
   private let handledLabel = UILabel()
   private let progress = Progress()
@@ -26,6 +26,7 @@ final class ForYouViewController: UIViewController {
     super.viewDidLoad()
     setConstraints()
     setUI()
+    setTimerProgress()
   }
   
   // MARK: - IBAction
@@ -105,11 +106,18 @@ final class ForYouViewController: UIViewController {
     
     orderButton.addTarget(self, action: #selector(didTouchButton), for: .touchUpInside)
     orderButton.createAppleStoreButton()
-    avatarImageView.loadImage()
-    setProgress()
+    
+    guard let data = UserDefaults.standard.data(forKey: "Avatar") else {
+      avatarImageView.image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
+      return
+    }
+    guard let decoded = try? PropertyListDecoder().decode(Data.self, from: data) else { return }
+    let image = UIImage(data: decoded)
+    avatarImageView.image = image
   }
   
-  private func setProgress() {
+  // MARK: - Setup Timer
+  private func setTimerProgress() {
     progress.totalUnitCount = 2
     var count: Int64 = 0
     
@@ -126,21 +134,28 @@ final class ForYouViewController: UIViewController {
   }
 }
 
-// MARK: - Extension UIImagePickerControllerDelegate, UINavigationControllerDelegate
-extension ForYouViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+// MARK: - Extension UIImagePickerControllerDelegate
+extension ForYouViewController: UIImagePickerControllerDelegate {
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-
+      
       guard let data = image.jpegData(compressionQuality: 0.5) else { return }
       let encoded = try? PropertyListEncoder().encode(data)
-      UserDefaults.standard.set(encoded, forKey: "KEY")
+      
+      UserDefaultsService.instance.set(key: "Avatar", value: encoded)
       avatarImageView.image = image
     }
+    
     picker.dismiss(animated: true)
   }
   
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     picker.dismiss(animated: true)
   }
+}
+
+// MARK: - Extension UINavigationControllerDelegate
+extension ForYouViewController: UINavigationControllerDelegate {
+  
 }
