@@ -9,30 +9,20 @@ import UIKit
 
 final class OnboardingViewController: UIViewController {
   
+  // MARK: - Private Properties
   private let stackView = UIStackView()
-  
   private let imageView = UIImageView()
   private let titleLabel = UILabel()
   private let subtitleLabel = UILabel()
   
-  
-  init(imageName: String, titleText: String, subtitleText: String) {
-    super.init(nibName: nil, bundle: nil)
-    self.imageView.image = UIImage(named: imageName)
-    self.titleLabel.text = titleText
-    self.subtitleLabel.text = subtitleText
-  }
-  
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-  
+  // MARK: - Override methods
   override func viewDidLoad() {
     super.viewDidLoad()
     setUI()
     setConstraints()
   }
   
+  // MARK: - Constraints
   private func setConstraints() {
     [imageView, titleLabel, subtitleLabel].forEach {
       stackView.addArrangedSubview($0)
@@ -50,6 +40,7 @@ final class OnboardingViewController: UIViewController {
     ])
   }
   
+  // MARK: - Setup UI
   private func setUI() {
     [stackView, imageView, titleLabel, subtitleLabel].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
     
@@ -64,5 +55,17 @@ final class OnboardingViewController: UIViewController {
     subtitleLabel.font = UIFont.preferredFont(forTextStyle: .body)
     subtitleLabel.textAlignment = .center
     subtitleLabel.numberOfLines = 0
+  }
+  
+  // MARK: - Initializers
+  init(imageName: String, titleText: String, subtitleText: String) {
+    super.init(nibName: nil, bundle: nil)
+    self.imageView.image = UIImage(named: imageName)
+    self.titleLabel.text = titleText
+    self.subtitleLabel.text = subtitleText
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
 }

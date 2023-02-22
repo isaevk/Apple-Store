@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		181F196429A48077006B8709 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F196329A48077006B8709 /* UIImageView+.swift */; };
+		181F196429A48077006B8709 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F196329A48077006B8709 /* UserDefaultsService.swift */; };
 		181F196629A4920E006B8709 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F196529A4920E006B8709 /* UIImage+.swift */; };
 		181F196829A4DDD5006B8709 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F196729A4DDD5006B8709 /* UIButton+.swift */; };
 		181F196A29A51530006B8709 /* LounchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F196929A51530006B8709 /* LounchViewController.swift */; };
@@ -32,7 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		181F196329A48077006B8709 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		181F196329A48077006B8709 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		181F196529A4920E006B8709 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		181F196729A4DDD5006B8709 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		181F196929A51530006B8709 /* LounchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LounchViewController.swift; sourceTree = "<group>"; };
@@ -73,17 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				181F196C29A5F1A7006B8709 /* PageViewController.swift */,
-				181F196E29A5F2FD006B8709 /* ViewControllers */,
-			);
-			path = PageViewController;
-			sourceTree = "<group>";
-		};
-		181F196E29A5F2FD006B8709 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
 				181F197529A61CCE006B8709 /* OnboardingViewController.swift */,
 			);
-			path = ViewControllers;
+			path = PageViewController;
 			sourceTree = "<group>";
 		};
 		182FB48C2990E6E5007171F7 = {
@@ -171,7 +163,7 @@
 				182FB4BB2991115D007171F7 /* Builder.swift */,
 				182FB4BD29927904007171F7 /* UITextField+.swift */,
 				182FB4CE299CBDA2007171F7 /* URLs.swift */,
-				181F196329A48077006B8709 /* UIImageView+.swift */,
+				181F196329A48077006B8709 /* UserDefaultsService.swift */,
 				181F196529A4920E006B8709 /* UIImage+.swift */,
 				181F196729A4DDD5006B8709 /* UIButton+.swift */,
 				181F197729A627E3006B8709 /* UIPageViewController+.swift */,
@@ -260,7 +252,7 @@
 				181F197829A627E3006B8709 /* UIPageViewController+.swift in Sources */,
 				182FB4B829910FEB007171F7 /* BagViewController.swift in Sources */,
 				182FB4B429910FBF007171F7 /* SearchViewController.swift in Sources */,
-				181F196429A48077006B8709 /* UIImageView+.swift in Sources */,
+				181F196429A48077006B8709 /* UserDefaultsService.swift in Sources */,
 				182FB4CD299CBD11007171F7 /* MainTabBarController.swift in Sources */,
 				182FB4AE29910F6E007171F7 /* ShopViewController.swift in Sources */,
 				182FB4C2299285A8007171F7 /* AirPodsItemView.swift in Sources */,

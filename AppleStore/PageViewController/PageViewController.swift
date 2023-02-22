@@ -9,25 +9,28 @@ import UIKit
 
 final class PageViewController: UIPageViewController {
   
-  private var pagesVC = [UIViewController]()
+  // MARK: - Private Properties
+  private var initialPage = 0
   
+  private var pagesVC = [UIViewController]()
   private let skipButton = UIButton()
   private let nextButton = UIButton()
   private let pageControl = UIPageControl()
-  private var initialPage = 0
   
   // Animation
   private var pageControlBottomAnchor: NSLayoutConstraint?
   private var skipButtonTopAnchor: NSLayoutConstraint?
   private var nextButtonTopAnchor: NSLayoutConstraint?
   
-  
+  // MARK: - Override methods
   override func viewDidLoad() {
     super.viewDidLoad()
+    setPages()
     setUI()
-    layout()
+    setConstraints()
   }
   
+  // MARK: - IBAction
   @objc private func skipTapped() {
     let lastPage = pagesVC.count - 1
     pageControl.currentPage = lastPage
@@ -47,8 +50,8 @@ final class PageViewController: UIPageViewController {
     animateControlsIfNeeded()
   }
   
-  
-  private func layout() {
+  // MARK: - Constraints
+  private func setConstraints() {
     [pageControl, skipButton, nextButton].forEach {
       view.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +76,8 @@ final class PageViewController: UIPageViewController {
     nextButtonTopAnchor?.isActive = true
   }
   
-  private func setUI() {
+  // MARK: - Setup Pages
+  private func setPages() {
     dataSource = self
     delegate = self
     
@@ -95,12 +99,10 @@ final class PageViewController: UIPageViewController {
       pagesVC.append($0)
     }
     setViewControllers([pagesVC[initialPage]], direction: .forward, animated: true)
-    
-    style()
   }
   
-  private func style() {
-    
+  // MARK: - Setup UI
+  private func setUI() {
     pageControl.currentPageIndicatorTintColor = .black
     pageControl.pageIndicatorTintColor = .systemGray2
     pageControl.numberOfPages = pagesVC.count
@@ -168,6 +170,7 @@ extension PageViewController: UIPageViewControllerDelegate {
     })
   }
   
+  // animations actions
   private func hideControls() {
     pageControlBottomAnchor?.constant = -80
     skipButtonTopAnchor?.constant = -80
