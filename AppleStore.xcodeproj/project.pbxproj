@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181F196429A48077006B8709 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F196329A48077006B8709 /* UserDefaultsService.swift */; };
+		181F196629A4920E006B8709 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F196529A4920E006B8709 /* UIImage+.swift */; };
+		181F196829A4DDD5006B8709 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F196729A4DDD5006B8709 /* UIButton+.swift */; };
+		181F196A29A51530006B8709 /* LounchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F196929A51530006B8709 /* LounchViewController.swift */; };
+		181F196D29A5F1A7006B8709 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F196C29A5F1A7006B8709 /* PageViewController.swift */; };
+		181F197629A61CCE006B8709 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F197529A61CCE006B8709 /* OnboardingViewController.swift */; };
+		181F197829A627E3006B8709 /* UIPageViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F197729A627E3006B8709 /* UIPageViewController+.swift */; };
 		182FB4992990E6E5007171F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4982990E6E5007171F7 /* AppDelegate.swift */; };
 		182FB49B2990E6E5007171F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB49A2990E6E5007171F7 /* SceneDelegate.swift */; };
 		182FB4A22990E6E6007171F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182FB4A12990E6E6007171F7 /* Assets.xcassets */; };
@@ -21,10 +28,17 @@
 		182FB4C2299285A8007171F7 /* AirPodsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4C1299285A8007171F7 /* AirPodsItemView.swift */; };
 		182FB4C429928B7A007171F7 /* AboutProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4C329928B7A007171F7 /* AboutProductViewController.swift */; };
 		182FB4CD299CBD11007171F7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4CC299CBD11007171F7 /* MainTabBarController.swift */; };
-		182FB4CF299CBDA2007171F7 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4CE299CBDA2007171F7 /* UIView+.swift */; };
+		182FB4CF299CBDA2007171F7 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4CE299CBDA2007171F7 /* URLs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181F196329A48077006B8709 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		181F196529A4920E006B8709 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		181F196729A4DDD5006B8709 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		181F196929A51530006B8709 /* LounchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LounchViewController.swift; sourceTree = "<group>"; };
+		181F196C29A5F1A7006B8709 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		181F197529A61CCE006B8709 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		181F197729A627E3006B8709 /* UIPageViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+.swift"; sourceTree = "<group>"; };
 		182FB4952990E6E5007171F7 /* AppleStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182FB4982990E6E5007171F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		182FB49A2990E6E5007171F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +55,7 @@
 		182FB4C1299285A8007171F7 /* AirPodsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPodsItemView.swift; sourceTree = "<group>"; };
 		182FB4C329928B7A007171F7 /* AboutProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProductViewController.swift; sourceTree = "<group>"; };
 		182FB4CC299CBD11007171F7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		182FB4CE299CBDA2007171F7 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		182FB4CE299CBDA2007171F7 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181F196B29A5F13D006B8709 /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				181F196C29A5F1A7006B8709 /* PageViewController.swift */,
+				181F197529A61CCE006B8709 /* OnboardingViewController.swift */,
+			);
+			path = PageViewController;
+			sourceTree = "<group>";
+		};
 		182FB48C2990E6E5007171F7 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +99,7 @@
 			children = (
 				182FB4982990E6E5007171F7 /* AppDelegate.swift */,
 				182FB49A2990E6E5007171F7 /* SceneDelegate.swift */,
+				181F196B29A5F13D006B8709 /* PageViewController */,
 				182FB4CB299CBCC8007171F7 /* MainTabBarController */,
 				182FB4AC29910F53007171F7 /* ShopViewController */,
 				182FB4AF29910F76007171F7 /* ForYouViewController */,
@@ -99,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				182FB4B029910F93007171F7 /* ForYouViewController.swift */,
+				181F196929A51530006B8709 /* LounchViewController.swift */,
 			);
 			path = ForYouViewController;
 			sourceTree = "<group>";
@@ -137,7 +162,11 @@
 			children = (
 				182FB4BB2991115D007171F7 /* Builder.swift */,
 				182FB4BD29927904007171F7 /* UITextField+.swift */,
-				182FB4CE299CBDA2007171F7 /* UIView+.swift */,
+				182FB4CE299CBDA2007171F7 /* URLs.swift */,
+				181F196329A48077006B8709 /* UserDefaultsService.swift */,
+				181F196529A4920E006B8709 /* UIImage+.swift */,
+				181F196729A4DDD5006B8709 /* UIButton+.swift */,
+				181F197729A627E3006B8709 /* UIPageViewController+.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -220,19 +249,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181F197829A627E3006B8709 /* UIPageViewController+.swift in Sources */,
 				182FB4B829910FEB007171F7 /* BagViewController.swift in Sources */,
 				182FB4B429910FBF007171F7 /* SearchViewController.swift in Sources */,
+				181F196429A48077006B8709 /* UserDefaultsService.swift in Sources */,
 				182FB4CD299CBD11007171F7 /* MainTabBarController.swift in Sources */,
 				182FB4AE29910F6E007171F7 /* ShopViewController.swift in Sources */,
 				182FB4C2299285A8007171F7 /* AirPodsItemView.swift in Sources */,
 				182FB4992990E6E5007171F7 /* AppDelegate.swift in Sources */,
 				182FB4C02992858A007171F7 /* MacbookView.swift in Sources */,
+				181F197629A61CCE006B8709 /* OnboardingViewController.swift in Sources */,
 				182FB4C429928B7A007171F7 /* AboutProductViewController.swift in Sources */,
 				182FB4B129910F93007171F7 /* ForYouViewController.swift in Sources */,
 				182FB49B2990E6E5007171F7 /* SceneDelegate.swift in Sources */,
-				182FB4CF299CBDA2007171F7 /* UIView+.swift in Sources */,
+				182FB4CF299CBDA2007171F7 /* URLs.swift in Sources */,
+				181F196A29A51530006B8709 /* LounchViewController.swift in Sources */,
+				181F196629A4920E006B8709 /* UIImage+.swift in Sources */,
 				182FB4BC2991115D007171F7 /* Builder.swift in Sources */,
+				181F196D29A5F1A7006B8709 /* PageViewController.swift in Sources */,
 				182FB4BE29927904007171F7 /* UITextField+.swift in Sources */,
+				181F196829A4DDD5006B8709 /* UIButton+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
