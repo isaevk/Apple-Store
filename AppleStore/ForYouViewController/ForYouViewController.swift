@@ -156,6 +156,4 @@ extension ForYouViewController: UIImagePickerControllerDelegate {
 }
 
 // MARK: - Extension UINavigationControllerDelegate
-extension ForYouViewController: UINavigationControllerDelegate {
-  
-}
+extension ForYouViewController: UINavigationControllerDelegate { }

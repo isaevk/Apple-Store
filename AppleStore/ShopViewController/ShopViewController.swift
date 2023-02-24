@@ -10,5 +10,4 @@ import UIKit
 final class ShopViewController: UIViewController {
   
   override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
-
 }
